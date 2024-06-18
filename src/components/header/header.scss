@@ -44,3 +44,22 @@
         }
     }
 }
+
+.header-fourthrow {
+    display: flex;
+    padding: 64px 40px;
+    justify-content: space-between;
+    background-color: #f4f4f4;
+
+    .header-fourthrow-item > h2 {
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 51px;
+        line-height: 46px;
+    }
+
+    .header-fourthrow-buttons-container {
+        display: flex;
+        gap: 4px;
+    }
+}
