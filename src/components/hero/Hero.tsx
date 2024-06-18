@@ -5,7 +5,7 @@ const Hero = () => {
     return (
         <div className="hero-grid">
             <div
-                className="full-box"
+                className="full-box featuredImage"
                 style={{
                     backgroundImage:
                         'url("/assets/pictures/article1/hero1.jpeg")',
@@ -17,6 +17,23 @@ const Hero = () => {
                     editorPicPath="/assets/pictures/article1/editor.jpeg"
                     editor="Alessandro Puglia"
                     date="20 Giugno 2022"
+                    isFeatured
+                />
+            </div>
+
+            <div
+                className="md-box featuredImage"
+                style={{
+                    backgroundImage:
+                        'url("/assets/pictures/article2/featured.png")',
+                }}
+            >
+                <ArticleDescription
+                    labelText="allarmi"
+                    articleTitle="Il collasso dei ghiacciai negli scatti del fotografo ambientale Fabiano Ventura"
+                    editorPicPath="/assets/pictures/article2/editor.png"
+                    editor="Ugo Lombi"
+                    date="14 Luglio 2022"
                 />
             </div>
         </div>

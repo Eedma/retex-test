@@ -1,11 +1,27 @@
 .hero-grid {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    /* grid-template-rows: repeat(3, 1fr); */
+
+    .featuredImage {
+        background-size: cover;
+        display: flex;
+    }
 
     .full-box {
         grid-column: 1/7;
+        /* grid-row: 1/2; */
         height: 506px;
-        background-size: cover;
-        display: flex;
+        /* background-size: cover;
+        display: flex; */
+    }
+
+    .md-box {
+        /* grid-row: 2/4; */
+        grid-column: 1/4;
+        height: 845px;
+    }
+
+    .sm-box {
     }
 }
