@@ -1,6 +1,16 @@
+import {FC} from "react";
 import "./button.scss";
 
-const Button = ({text, backgroundColor = "white", label = false}) => {
+interface ButtonProps {
+    text: string;
+    backgroundColor?: string;
+    label?: boolean;
+}
+const Button: FC<ButtonProps> = ({
+    text,
+    backgroundColor = "white",
+    label = false,
+}) => {
     return (
         <div
             className="button"

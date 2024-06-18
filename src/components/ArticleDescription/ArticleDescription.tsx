@@ -1,7 +1,15 @@
+import {FC} from "react";
 import Button from "../button/Button";
 import "./articleDescription.scss";
 
-const ArticleDescription = (props) => {
+interface ArticleDescriptionProps {
+    labelText: string;
+    articleTitle: string;
+    editorPicPath: string;
+    editor: string;
+    date: string;
+}
+const ArticleDescription: FC<ArticleDescriptionProps> = (props) => {
     const {labelText, articleTitle, editorPicPath, editor, date} = props;
     return (
         <div className="container">
