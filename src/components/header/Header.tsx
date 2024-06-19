@@ -1,7 +1,13 @@
+import {useState} from "react";
 import Button from "../button/Button";
 import "./header.scss";
 
 const Header = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleSetIsMenuOpen = () =>
+        setIsMenuOpen((isMenuOpen) => !isMenuOpen);
+
     return (
         <>
             <div className="header-firstrow">
@@ -17,11 +23,21 @@ const Header = () => {
             </div>
 
             <div className="header-secondrow">
-                <div className="header-secondrow-item">
-                    <img
-                        src="/assets/icons/open_menu.png"
-                        alt="open menu icon"
-                    />
+                <div
+                    className="header-secondrow-item"
+                    onClick={handleSetIsMenuOpen}
+                >
+                    {isMenuOpen ? (
+                        <img
+                            src="/assets/icons/close_menu.png"
+                            alt="close menu icon"
+                        />
+                    ) : (
+                        <img
+                            src="/assets/icons/open_menu.png"
+                            alt="open menu icon"
+                        />
+                    )}
                 </div>
                 <div className="header-secondrow-item">
                     <img src="/assets/icons/search.png" alt="search icon" />
@@ -29,6 +45,62 @@ const Header = () => {
             </div>
 
             <div className="header-thirdrow">
+                {isMenuOpen && (
+                    <div className="opened-menu">
+                        <div className="opened-menu-box-lg">
+                            <h2>Articoli</h2>
+                            <h6>Trend, dati e novità del Terzo Settore</h6>
+                        </div>
+                        <div className="opened-menu-box-lg">
+                            <h2>Storie</h2>
+                            <h6>
+                                Letture ed approfondimenti dei fenomi complessi
+                            </h6>
+                        </div>
+                        <div className="opened-menu-box-lg">
+                            <h2>Interviste</h2>
+                            <h6>Racconti reali di persone ed organizzazioni</h6>
+                        </div>
+                        <div className="opened-menu-box-lg">
+                            <h2>Opinioni</h2>
+                            <h6>
+                                Riflessioni e confronti dei nostri opinionisti
+                            </h6>
+                        </div>
+                        <div className="opened-menu-box-lg">
+                            <h2>Podcast</h2>
+                            <h6>
+                                Un luogo per dar voce ai protagonisti della
+                                sostenibilità
+                            </h6>
+                        </div>
+                        <div className="opened-menu-box-lg">
+                            <h2>Bookazine</h2>
+                            <h6>
+                                Una rivista da leggere e un libro da conservare
+                            </h6>
+                        </div>
+
+                        <div className="opened-menu-box-sm">
+                            <h6>Chi siamo</h6>
+                        </div>
+                        <div className="opened-menu-box-sm">
+                            <h6>Comitato editoriale</h6>
+                        </div>
+                        <div className="opened-menu-box-sm">
+                            <h6>Servizi</h6>
+                        </div>
+                        <div className="opened-menu-box-sm">
+                            <h6>Agenda/Eventi</h6>
+                        </div>
+                        <div className="opened-menu-box-sm">
+                            <h6>Mappa dell'attivismo</h6>
+                        </div>
+                        <div className="opened-menu-box-sm">
+                            <h6>Inchieste crowdfuncding</h6>
+                        </div>
+                    </div>
+                )}
                 <div className="header-thirdrow-item">
                     <h3>tutti i temi</h3>
                 </div>
